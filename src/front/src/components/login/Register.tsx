@@ -13,6 +13,11 @@ function RegisterBox() {
   const loginCtx = useContext(LoginContext);
   const langCtx = useContext(langContextObj);
   const userNameRef = useRef<HTMLInputElement>(null);
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
   const errorMessageRef = useRef<HTMLSpanElement>(null);
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -20,13 +25,16 @@ function RegisterBox() {
   let isValid = true;
   function loginHandler(e: React.FormEvent) {
     e.preventDefault();
-    isValid = userNameRef.current?.value === "admin";
-    if (userNameRef.current) {
+    isValid = firstNameRef.current?.value !== "" && lastNameRef.current?.value !== "" && emailRef.current?.value !== "" && passwordRef.current?.value !== "";
+    if (firstNameRef.current && lastNameRef.current && emailRef.current && passwordRef.current) {
       if (isValid) {
         loginCtx.toggleLogin();
         navigate("/");
       } else {
-        userNameRef.current.focus();
+        firstNameRef.current.focus();
+        lastNameRef.current.focus();
+        emailRef.current.focus();
+        passwordRef.current.focus();
         errorMessageRef.current?.setAttribute(
           "style",
           "display: inline-block;opacity: 1"
@@ -46,63 +54,54 @@ function RegisterBox() {
         <h2 className={classes.title}>Register your account</h2>
         <form onSubmit={loginHandler}>
           <Input
-            ref={userNameRef}
+            ref={firstNameRef}
             type={"text"}
             id={"firstName"}
             placeholder={"firstName"}
           />
           <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
+            please enter your firstName
           </span>
        
           <Input
-            ref={userNameRef}
+            ref={lastNameRef}
             type={"text"}
             id={"lastName"}
             placeholder={"lastName"}
           />
           <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
+            please enter your lastName
           </span>
           <Input
-            ref={userNameRef}
-            type={"text"}
-            id={"alias"}
-            placeholder={"alias"}
-          />
-          <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
-          </span>
-          <Input
-            ref={userNameRef}
+            ref={emailRef}
             type={"text"}
             id={"email"}
             placeholder={"email"}
           />
           <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
+            please enter your email
           </span>
           <Input
             type={"file"}
             id={"photo"}
           />
           <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
+            please enter your photo
           </span>
-             <Input
+          <Input
+            ref={passwordRef}
             type={"password"}
             id={"pass"}
-            value={"admin"}
+            
             readonly={true}
           />
           <span ref={errorMessageRef} className={classes.errorMessage}>
-            {t("errorMessage")}
+            please enter your password
           </span>
           <Button type="submit">Register</Button>
           <div className={classes.checkbox}>
             <input type="checkbox" id="rememberMe" />
-            <label htmlFor="rememberMe">{t("rememberMe")}</label>
-            
+            <label htmlFor="rememberMe">{t("rememberMe")}</label>           
           </div>
          
         </form>
@@ -119,3 +118,9 @@ function RegisterBox() {
 }
 
 export default RegisterBox;
+
+
+
+
+
+

@@ -1,12 +1,11 @@
 package com.hitema.projetjavaapi.entities;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Document(collection = "users")
 @Getter
 @Setter
@@ -15,23 +14,12 @@ import java.time.LocalDateTime;
 @ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false)
     private Long id;
-
     private String email;
-
     private String password;
-
-    @Column(name = "first_name", nullable = false)
     private String firstname;
-
-    @Column(name = "last_name", nullable = false)
     private String lastname;
-
-    @Column(name = "creation_date", nullable = false)
     private LocalDateTime creationDate;
-
     private Boolean active;
 
     @ToString.Exclude

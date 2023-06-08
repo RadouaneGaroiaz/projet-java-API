@@ -1,10 +1,9 @@
 package com.hitema.projetjavaapi.entities;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Document(collection = "categories")
 @Getter
 @Setter
@@ -14,12 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id", nullable = false)
     private Long id;
-
     private String name;
-
     private String description;
 
     public Category id(Long id) {

@@ -50,8 +50,8 @@ const CustomTable: React.FC<Props> = (props) => {
             />
             {item.firstName}
           </td>
-          <td className="ltr">{item.email}</td>
           <td className="ltr">{item.lastName}</td>
+          <td className="ltr">{item.email}</td>
           <td>{item.created_at}</td>
           <td>{item.active}</td>
          

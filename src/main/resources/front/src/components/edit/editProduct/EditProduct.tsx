@@ -16,7 +16,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
           <div className={classes.img_wrapper}>
             <img
               className={classes.pic}
-              src={props.product?.pic}
+              src={props.product?.photo}
               alt="product pic"
             />
           </div>
@@ -24,7 +24,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
             <div>
               <div className={classes.title}>{t("proName")}</div>
               <div className={classes.value}>
-                {t(`${props.product?.product}`)}
+                {t(`${props.product?.name}`)}
               </div>
             </div>
             <div>
@@ -40,10 +40,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
               </div>
             </div>
             <div>
-              <div className={classes.title}>{t("inventoryCount")}</div>
-              <div className={classes.value}>
-                {t(`${props.product?.inventory}`)}
-              </div>
+             
             </div>
           </div>
         </Card>
@@ -71,7 +68,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
               </div>
               <img
                 className={classes.pic}
-                src={props.product?.pic}
+                src={props.product?.photo}
                 alt="product pic"
               />
             </div>
@@ -83,7 +80,7 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
               <Input
                 id="proName"
                 type="text"
-                placeholder={props.product?.product}
+                placeholder={props.product?.name}
               />
               <Input
                 id="category"
@@ -95,11 +92,11 @@ const EditProduct: React.FC<{ product?: Props }> = (props) => {
                 type="text"
                 placeholder={props.product?.price}
               />
-              <Input
+          {/*     <Input
                 id="inventoryCount"
                 type="number"
                 placeholder={props.product?.inventory.toString()}
-              />
+              /> */}
               <div className={classes.btn__wrapper}>
                 <Link to="/products">
                   <Button type="submit">{t("upload")}</Button>

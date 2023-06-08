@@ -15,7 +15,7 @@ const CustomTable: React.FC<Props> = (props) => {
   }
   function tableBody(item: complex, index: number) {
     /* type guard (in typescript) */
-    if ("username" in item) {
+  /*   if ("username" in item) {
       //for implementing top customers
       return (
         <tr key={index}>
@@ -24,7 +24,7 @@ const CustomTable: React.FC<Props> = (props) => {
           <td>{item.price}</td>
         </tr>
       );
-    } else if ("orderId" in item) {
+    }  *//* else if ("orderId" in item) {
       //for implementing latest transactions
       return (
         <tr key={index}>
@@ -37,24 +37,24 @@ const CustomTable: React.FC<Props> = (props) => {
           </td>
         </tr>
       );
-    } else if ("email" in item) {
+    } */ /* else */ if ("email" in item) {
       //for implementing customers table
       return (
         <tr key={index}>
-          <td>{item.ID}</td>
+         {/*  <td>{item.ID}</td> */}
           <td className={classes.userName}>
             <img
               className={classes.avatar}
-              src={item.avatar}
+              src={item.photo}
               alt="user avatar"
             />
-            {item.userName}
+            {item.firstName}
           </td>
           <td className="ltr">{item.email}</td>
-          <td className="ltr">{item.phoneNumber}</td>
-          <td>{item.totalOrders}</td>
-          <td>{item.totalSpend}</td>
-          <td>{item.location}</td>
+          <td className="ltr">{item.lastName}</td>
+          <td>{item.created_at}</td>
+          <td>{item.active}</td>
+         
           <td className={classes.actions}>
             <Icon icon="charm:menu-kebab" />
             <div className={classes.actions__box}>
@@ -64,11 +64,11 @@ const CustomTable: React.FC<Props> = (props) => {
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
-              <div className={classes.actions__edit}>
+              {/* <div className={classes.actions__edit}>
                 <Link to={`/customers/${item.ID}`}>
                   <Icon icon="fluent:edit-16-regular" width="24" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </td>
         </tr>
@@ -77,16 +77,15 @@ const CustomTable: React.FC<Props> = (props) => {
       //for implementing products table
       return (
         <tr key={index}>
-          <td>{item.ID}</td>
+          {/* <td>{item.ID}</td> */}
           <td className={classes.product_name}>
-            <img
+          {/*   <img
               className={classes.product_img}
-              src={item.pic}
+              src={item.photo}
               alt="user avatar"
-            />
-            {item.product}
+            /> */}
+            {item.name}
           </td>
-          <td>{item.inventory}</td>
           <td>{item.price}</td>
           <td>{item.category}</td>
           <td className={classes.actions}>
@@ -98,11 +97,11 @@ const CustomTable: React.FC<Props> = (props) => {
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
-              <div className={classes.actions__edit}>
+         {/*      <div className={classes.actions__edit}>
                 <Link to={`/products/${item.ID}`}>
                   <Icon icon="fluent:edit-16-regular" width="24" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </td>
         </tr>

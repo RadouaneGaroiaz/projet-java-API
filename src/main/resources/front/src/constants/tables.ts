@@ -9,52 +9,58 @@ export const customersHeader = [
 ];
 export const customers = [
   {
-    firstname: "John",
-    lastname: "Doe",
+    firstName: "John",
+    lastName: "Doe",
     email: "john@doe.com",
     photo: "",
     created_at: "2021-07-01",
     active: true,
+    password: "",
   },
   {
-    firstname: "Jane",
-    lastname: "Doe",
+    firstName: "Jane",
+    lastName: "Doe",
     email: "jane@doa@gmail.com",
     photo: "",
     created_at: "2021-07-01",
     active: true,
+    password: "",
   },
   {
-    firstname: "John",
-    lastname: "Doe",
+    firstName: "John",
+    lastName: "Doe",
     email: "",
     photo: "",
     created_at: "2021-07-01",
     active: true, 
+    password: "",
   },
   {
-    firstname: "jack",
-    lastname: "Doe",
+    firstName: "jack",
+    lastName: "Doe",
     email: "jack@doa@gmail.com",
     photo: "",
     created_at: "2021-07-01",
     active: true, 
+    password: "",
   },
   {
-    firstname: "momo",
-    lastname: "kok",
+    firstName: "momo",
+    lastName: "kok",
     email: "mom@kok.gg",
     photo: "",
     created_at: "2021-07-01",
     active: true, 
+    password: "",
   },
   {
-    firstname: "tata",
-    lastname: "fofo",
+    firstName: "tata",
+    lastName: "fofo",
     email: "fofo@tat.gg",
     photo: "",
     created_at: "2021-07-01",
     active: true, 
+    password: "",
   },
 
 ];
@@ -67,13 +73,14 @@ export const productsHeader = [
   "price",
  
 ];
-export const products = [
+export const products2 = [
   {
     name: "NUBWO G06",
     code: "NUBWO G06",
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -81,6 +88,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -88,6 +96,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -95,6 +104,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -102,6 +112,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -109,6 +120,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -116,6 +128,7 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   },
   {
     name: "NUBWO G06",
@@ -123,6 +136,10 @@ export const products = [
     description: "NUBWO G06",
     category: "digital",
     price: "$120.00",
+    photo: "",
   }
 
 ];
+
+export const products = fetch("http://localhost:8080/products/"); 
+

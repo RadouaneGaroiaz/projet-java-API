@@ -16,11 +16,11 @@ function Customers() {
     customerTable = <LoadingSpinner />;
   }
 
-  if (error) {
+/*   if (error) {
     customerTable = (
       <CustomTable limit={10} headData={customersHeader} bodyData={customers} />
     );
-  }
+  } */
 
   if (status === "fetched" && data) {
     customerTable = (

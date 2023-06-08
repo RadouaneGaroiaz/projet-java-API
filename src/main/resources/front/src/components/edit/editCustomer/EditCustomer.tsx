@@ -18,7 +18,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
             <div className={classes.img_wrapper}>
               <img
                 className={classes.avatar}
-                src={props.customer?.avatar}
+                src={props.customer?.photo}
                 alt="customer avatar"
               />
             </div>
@@ -26,14 +26,14 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               <p>{t("AccountDetails")}</p>
               <div className={classes.account__info__userName}>
                 <Icon icon="majesticons:user-line" width="24" />
-                <div>{props.customer?.userName}</div>
+                <div>{props.customer?.firstName}</div>
               </div>
             </div>
             <div className={classes.account__info}>
               <p>{t("contacts")}</p>
               <div className={classes.account__contact__phone}>
                 <Icon icon="clarity:mobile-phone-solid" width="26" />
-                <div>{props.customer?.phoneNumber}</div>
+                <div>{props.customer?.created_at}</div>
               </div>
               <div className={classes.account__contact__email}>
                 <Icon icon="fontisto:email" width="24" />
@@ -41,7 +41,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               </div>
               <div className={classes.account__contact__location}>
                 <Icon icon="ep:map-location" width="28" />
-                <div>{props.customer?.location}</div>
+                <div>{props.customer?.active}</div>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               </div>
               <img
                 className={classes.avatar}
-                src={props.customer?.avatar}
+                src={props.customer?.photo}
                 alt="customer avatar"
               />
             </div>
@@ -82,14 +82,14 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
               <Input
                 id="userName"
                 type="text"
-                placeholder={props.customer?.userName}
+                placeholder={props.customer?.firstName}
               />
               <Input
                 id="phoneNumber"
                 type="tel"
                 minLength={7}
                 maxLength={12}
-                placeholder={props.customer?.phoneNumber}
+                placeholder={props.customer?.created_at}
               />
               <Input
                 id="email"
@@ -100,7 +100,7 @@ const EditCustomer: React.FC<{ customer?: IcustomersTable }> = (props) => {
                 id="address"
                 type="text"
                 minLength={10}
-                placeholder={props.customer?.location}
+                /* placeholder={props.customer?.active} */
               />
               <div className={classes.btn__wrapper}>
                 <Link to="/customers">

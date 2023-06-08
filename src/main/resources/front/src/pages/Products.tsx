@@ -8,7 +8,7 @@ import LoadingSpinner from "../components/UI/loadingSpinner/LoadingSpinner";
 
 
 const url =
-  "https://admin-panel-79c71-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+"http://localhost:8080/products/";
 
 const dropdownOptions = [
   { label: "all", value: "all" },
@@ -19,7 +19,7 @@ const dropdownOptions = [
 function Products() {
   const { t } = useTranslation();
   const [selected, setSelected] = useState(dropdownOptions[0].value);
-  const { data, error, status } = useFetch<IProductsTable[]>(url);
+  const { data, status } = useFetch<IProductsTable[]>(url);
   let productsTable;
   let tableData: IProductsTable[] | undefined;
 
@@ -31,7 +31,7 @@ function Products() {
     productsTable = <LoadingSpinner />;
   }
 
-  if (error) {
+/*   if (error) {
     //if fetch has error:
     //select data from local file ("../constants/tables.ts")
     switch (selected) {
@@ -51,7 +51,7 @@ function Products() {
     productsTable = (
       <CustomTable headData={productsHeader} bodyData={tableData} limit={10} />
     );
-  }
+  } */
 
   if (status === "fetched" && data) {
     switch (selected) {

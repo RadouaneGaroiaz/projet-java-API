@@ -8,29 +8,25 @@ import { products } from "../constants/tables";
 import LoadingSpinner from "../components/UI/loadingSpinner/LoadingSpinner";
 
 const url =
-  "https://admin-panel-79c71-default-rtdb.europe-west1.firebasedatabase.app/products";
+  "http://localhost:8080/";
 function ProductEdit() {
   const { t } = useTranslation();
-  const params = useParams();
-  let { productId } = params;
 
-  let productInfo: IProductsTable = products.filter(
-    (item) => item.ID.toString() === productId
-  )[0];
+
+console.log(products);
+
+
 
   let productEdit;
 
-  const { data, error, status } = useFetch<IProductsTable>(
-    `${url}/${productId}.json`
+  const { data, status } = useFetch<IProductsTable>(
+    `${url}/products/`
   );
 
   if (status === "loading") {
     productEdit = <LoadingSpinner />;
   }
 
-  if (error) {
-    productEdit = <EditProduct product={productInfo} />;
-  }
 
   if (status === "fetched" && data) {
     productEdit = <EditProduct product={data} />;

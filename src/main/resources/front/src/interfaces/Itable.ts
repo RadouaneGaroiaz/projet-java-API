@@ -1,16 +1,6 @@
-export interface ItopCustomers extends Object {
-  username: string;
-  order: number;
-  price: string;
-}
 
-export type TlatestTransactions = {
-  orderId: string;
-  customer: string;
-  totalPrice: string;
-  date: string;
-  status: string;
-};
+
+
 
 export interface IcustomersTable {
   firstName: string;
@@ -19,19 +9,24 @@ export interface IcustomersTable {
   password: string;
   created_at: string;
   active: boolean;
-  
+  photo: string;
 
 }
 
 export interface IProductsTable {
   name: string;
   code: string;
+  category: string;
+  price: string;
+  photo: string;
+  description: string;
+  
+  
 }
 
 export type complex =
-  | ItopCustomers
-  | TlatestTransactions
-  | IcustomersTable
+  
+   IcustomersTable
   | IProductsTable;
 
 export interface Itable {
@@ -39,9 +34,8 @@ export interface Itable {
   selectedCategory?: string;
   headData: string[];
   bodyData: (
-    | ItopCustomers
-    | TlatestTransactions
-    | IcustomersTable
+
+    IcustomersTable
     | IProductsTable
   )[];
 }

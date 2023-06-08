@@ -20,6 +20,6 @@ public class Product {
     private String name;
     private String description;
     private List<byte[]> pictures;
-    private Category category;
+    private String category;
     private Double price;
 }

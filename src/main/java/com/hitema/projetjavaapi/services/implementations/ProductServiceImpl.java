@@ -22,8 +22,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product read(Long id) {
-        return productRepository.findById(id.toString()).orElse(null);
+    public Product read(String id) {
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void delete(Long id) {
-        productRepository.deleteById(id.toString());
+    public void delete(String id) {
+        productRepository.deleteById(id);
     }
 }

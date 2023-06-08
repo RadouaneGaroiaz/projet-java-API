@@ -21,7 +21,7 @@ public class CategoryController {
     }
 
     @GetMapping("/{id}")
-    public Category getCategory(@PathVariable Long id){
+    public Category getCategory(@PathVariable String id){
         return service.read(id);
     }
 
@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCategory(@PathVariable Long id) {
+    public ResponseEntity deleteCategory(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

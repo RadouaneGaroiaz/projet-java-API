@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface ProductService {
     Product create(Product product);
-    Product read(Long id);
+    Product read(String id);
     List<Product> readAll();
     Product update(Product product);
-    void delete(Long id);
+    void delete(String id);
 }

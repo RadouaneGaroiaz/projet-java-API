@@ -15,7 +15,7 @@ import java.util.List;
 public class Product {
 
     @Id
-    private Long id;
+    private String id;
     private String code;
     private String name;
     private String description;

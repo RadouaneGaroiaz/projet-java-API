@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface CategoryService {
     Category create(Category category);
-    Category read(Long id);
+    Category read(String id);
     List<Category> readAll();
     Category update(Category category);
-    void delete(Long id);
+    void delete(String id);
 }

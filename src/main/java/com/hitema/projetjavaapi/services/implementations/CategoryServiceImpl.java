@@ -22,8 +22,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category read(Long id) {
-        return categoryRepository.findById(id.toString()).orElse(null);
+    public Category read(String id) {
+        return categoryRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void delete(Long id) {
-        categoryRepository.deleteById(id.toString());
+    public void delete(String id) {
+        categoryRepository.deleteById(id);
     }
 }

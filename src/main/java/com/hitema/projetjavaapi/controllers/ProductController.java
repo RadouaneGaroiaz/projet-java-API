@@ -21,7 +21,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable Long id){
+    public Product getProduct(@PathVariable String id){
         return service.read(id);
     }
 
@@ -38,7 +38,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteProduct(@PathVariable Long id) {
+    public ResponseEntity deleteProduct(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

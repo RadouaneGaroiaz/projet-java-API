@@ -24,45 +24,4 @@ public class User {
 
     @ToString.Exclude
     private byte[] picture;
-
-
-    public User id(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public User email(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public User password(String password) {
-        this.password = password;
-        return this;
-    }
-
-    public User firstname(String firstname) {
-        this.firstname = firstname;
-        return this;
-    }
-
-    public User lastname(String lastname) {
-        this.lastname = lastname;
-        return this;
-    }
-
-    public User creationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-        return this;
-    }
-
-    public User active(Boolean active) {
-        this.active = active;
-        return this;
-    }
-
-    public User picture(byte[] picture) {
-        this.picture = picture;
-        return this;
-    }
 }

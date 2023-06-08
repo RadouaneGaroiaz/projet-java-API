@@ -4,12 +4,14 @@ import com.hitema.projetjavaapi.entities.Category;
 import com.hitema.projetjavaapi.repositories.CategoryRepository;
 import com.hitema.projetjavaapi.services.CategoryService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;

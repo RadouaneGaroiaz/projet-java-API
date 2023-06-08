@@ -13,23 +13,19 @@ export type TlatestTransactions = {
 };
 
 export interface IcustomersTable {
-  ID: number | string;
-  userName: string;
-  avatar: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phoneNumber: string;
-  totalOrders: number;
-  totalSpend: string;
-  location: string;
+  password: string;
+  created_at: string;
+  active: boolean;
+  
+
 }
 
 export interface IProductsTable {
-  ID: number | string;
-  pic: string;
-  product: string;
-  inventory: number;
-  price: string;
-  category: string;
+  name: string;
+  code: string;
 }
 
 export type complex =

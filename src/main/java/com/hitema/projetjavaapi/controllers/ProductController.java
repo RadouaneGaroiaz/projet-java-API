@@ -42,4 +42,9 @@ public class ProductController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/search/{category}")
+    public List<Product> getProductByName(@PathVariable String category){
+        return service.getByCategory(category);
+    }
 }

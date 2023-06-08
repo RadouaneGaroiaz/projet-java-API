@@ -11,4 +11,5 @@ public interface ProductService {
     List<Product> readAll();
     Product update(Product product);
     void delete(String id);
+    List<Product> getByCategory(String category);
 }

@@ -19,9 +19,9 @@ const sidebarNav = [
   },
   {
     link: "/orders",
-    section: "Carte",
+    section: "Cart",
     icon: "icon-park-outline:transaction-order",
-    text: "Carte",
+    text: "Cart",
   },
 
 

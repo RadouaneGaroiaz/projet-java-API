@@ -14,46 +14,23 @@ const CustomTable: React.FC<Props> = (props) => {
     setShowModal((prev) => !prev);
   }
   function tableBody(item: complex, index: number) {
-    /* type guard (in typescript) */
-  /*   if ("username" in item) {
-      //for implementing top customers
-      return (
-        <tr key={index}>
-          <td>{item.username}</td>
-          <td>{item.order}</td>
-          <td>{item.price}</td>
-        </tr>
-      );
-    }  *//* else if ("orderId" in item) {
-      //for implementing latest transactions
-      return (
-        <tr key={index}>
-          <td>{item.orderId}</td>
-          <td>{item.customer}</td>
-          <td>{item.totalPrice}</td>
-          <td>{item.date}</td>
-          <td>
-            <Badge content={item.status} />
-          </td>
-        </tr>
-      );
-    } */ /* else */ if ("email" in item) {
+if ("email" in item) {
       //for implementing customers table
       return (
         <tr key={index}>
          {/*  <td>{item.ID}</td> */}
           <td className={classes.userName}>
-            <img
+           { <img
               className={classes.avatar}
               src={item.photo}
               alt="user avatar"
-            />
+            /> }
             {item.firstName}
           </td>
           <td className="ltr">{item.lastName}</td>
           <td className="ltr">{item.email}</td>
-          <td>{item.created_at}</td>
-          <td>{item.active}</td>
+          <td className="ltr">{item.created_at}</td>
+          <td className="ltr">{item.active}</td>
          
           <td className={classes.actions}>
             <Icon icon="charm:menu-kebab" />
@@ -64,11 +41,7 @@ const CustomTable: React.FC<Props> = (props) => {
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
-              {/* <div className={classes.actions__edit}>
-                <Link to={`/customers/${item.ID}`}>
-                  <Icon icon="fluent:edit-16-regular" width="24" />
-                </Link>
-              </div> */}
+            
             </div>
           </td>
         </tr>
@@ -77,13 +50,12 @@ const CustomTable: React.FC<Props> = (props) => {
       //for implementing products table
       return (
         <tr key={index}>
-          {/* <td>{item.ID}</td> */}
           <td className={classes.product_name}>
-          {/*   <img
+          {   <img
               className={classes.product_img}
               src={item.photo}
               alt="user avatar"
-            /> */}
+            /> }
             {item.name}
           </td>
           <td>{item.price}</td>
@@ -97,11 +69,7 @@ const CustomTable: React.FC<Props> = (props) => {
               >
                 <Icon icon="fluent:delete-24-regular" width="24" />
               </div>
-         {/*      <div className={classes.actions__edit}>
-                <Link to={`/products/${item.ID}`}>
-                  <Icon icon="fluent:edit-16-regular" width="24" />
-                </Link>
-              </div> */}
+       
             </div>
           </td>
         </tr>
@@ -116,15 +84,7 @@ const CustomTable: React.FC<Props> = (props) => {
   };
 
   const [dataShow, setDataShow] = useState(initDataShow);
-  // const [selectedCategory, setSelectedCategory] = useState(
-  //   props.selectedCategory
-  // );
 
-  // if (props.selectedCategory) {
-  //   if (selectedCategory !== props.selectedCategory)
-  //     setDataShow(props.bodyData);
-  // }
-  // setSelectedCategory(props.selectedCategory);
 
   let pages = 1;
 
